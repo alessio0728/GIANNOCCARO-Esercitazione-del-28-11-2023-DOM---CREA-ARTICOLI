@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creazione articoli</title>
+    <link rel="stylesheet" href="stile crea articoli.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <!--METODO AULAB-->
+
+    <!--INTESTAZIONE-->
+
+    <center>
+        <h1>CREA POST</h1>
+    </center>
+
+    <div class="grande">
+
+        <label class="titolo" for="name">Titolo:</label>
+
+        <input class="titoloInterno" type="text" id="titolo" placeholder="Inserisci del testo per un titolo">
+
+        <label class="titolo" for="name">Paragrafo:</label>
+        <input class="titoloInterno" type="text" id="paragrafo" placeholder="Descrizione" />
+
+        <button class="bottone" onclick="creaarticoli()">Crea Articolo</button>
+
+
+    </div>
+
+    <!--CREAZIONE ARTICOLI-->
+
+    <main id="nuovo" class="articoliPadre">
+
+    </main>
+
+    <script>
+
+        function creaarticoli() {
+
+            let titolo = document.getElementById("titolo").value
+
+            let paragrafo = document.getElementById("paragrafo").value
+
+            let data = new Date().toLocaleDateString(); // Ottieni la data corrente
+
+            let ora = new Date().toLocaleTimeString(); // Ottieni l'orario corrente
+
+            let baby = document.getElementById("nuovo");
+
+
+
+
+            baby.innerHTML += ` 
+            
+            <div id="divDarimuovere" class="elimina">
+            
+            <article  id="articoli" class="articoli">
+
+           <i id="cestino" onclick="removeDivs()" style=""  class="bi bi-trash3-fill "></i>
+
+           <h1 id="articoloTitolo">${titolo}</h1>
+
+           <p id="testo">${paragrafo}</p>
+
+           <p><strong>Data:</strong> ${data}</p>
+
+           <p><strong>Ora:</strong> ${ora}</p>
+
+           </article> </div>` ;
+
+
+
+            clearInputs(); // Pulisci i campi di input dopo aver creato l'articolo
+        }
+
+        function clearInputs() {
+            document.getElementById('titolo').value = '';
+            document.getElementById('paragrafo').value = '';
+        }
+
+        // Rimuovi l'elemento articolo genitore
+
+
+        function removeDivs() {
+
+            let div1 = document.getElementById("divDarimuovere");
+
+            div1.parentNode.removeChild(div1);
+        }
+
+
+
+
+
+
+        /*function clearInputs() {
+            document.getElementById('titolo').value = '';
+            document.getElementById('paragrafo').value = '';
+        }
+
+        function eliminaDiv() {
+            var divDaEliminare = document.getElementById("nuovo");
+
+            // Verifica se l'elemento esiste prima di tentare di eliminarlo
+            if (divDaEliminare) {
+                divDaEliminare.remove(); // Rimuove l'elemento dal DOM
+            } else {
+                console.log("Elemento non trovato");
+            }
+        }*/
+
+
+
+
+    </script>
+
+
+
+    <!--METODO SU INTERNET -->
+
+    <!--
+    
+    <label for="name">Titolo:</label>
+    <input type="text" id="titolo" placeholder="Titolo" />
+    <label for="name">Paragrafo:</label>
+    <input type="text" id="paragrafo" placeholder="Descrizione" />
+
+    <button onclick="createArticle()">Crea Articolo</button>
+
+    <div id="articles-container"
+        style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; height: 100vh;">
+    </div>
+    [21:38]
+    <script>
+
+        function createArticle() {
+            let titoloInput = document.getElementById('titolo').value;
+            let paragrafoInput = document.getElementById('paragrafo').value;
+
+            if (!titoloInput || !paragrafoInput) {
+                alert("Inserisci sia il titolo che il paragrafo per creare l'articolo.");
+                return;
+            }
+
+            let articolo = document.createElement('article');
+            articolo.setAttribute('style', 'background-color: aqua; width: 600px; height: 300px; border-radius: 20px; margin: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center;');
+
+            let titolo = document.createElement('h2');
+            titolo.textContent = titoloInput;
+            titolo.setAttribute('style', 'text-align: center;');
+
+            let paragrafo = document.createElement('p');
+            paragrafo.textContent = paragrafoInput;
+            paragrafo.setAttribute('style', 'text-align: center;');
+
+            let data = document.createElement('p');
+            let currentDate = new Date();
+            data.textContent = 'Data di pubblicazione: ' + currentDate.toLocaleDateString();
+            data.setAttribute('style', 'text-align: center;');
+
+            articolo.appendChild(titolo);
+            articolo.appendChild(paragrafo);
+            articolo.appendChild(data);
+
+            document.getElementById('articles-container').appendChild(articolo);
+            clearInputs();
+        }
+
+        //SVUOTARE GLI ELEMENTI DEI LABEL
+
+        function clearInputs() {
+            document.getElementById('titolo').value = '';
+            document.getElementById('paragrafo').value = '';
+        }
+    </script>
+    -->
+
+<!--CREATO IL 05-12-2023-->
+</body>
+
+</html>

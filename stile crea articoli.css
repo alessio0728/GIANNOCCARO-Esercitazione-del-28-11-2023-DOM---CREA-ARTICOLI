@@ -1,0 +1,155 @@
+* {
+
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+
+}
+
+body {
+
+    background: #C5FFF8;
+    background-size: cover;
+
+}
+
+div {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: orange;*/
+    height: 300px;
+
+}
+
+.titolo {
+
+    font-size: x-large;
+    margin-left: 50px;
+
+}
+
+.titoloInterno {
+
+    width: 350px;
+    font-size: x-large;
+
+}
+
+.bottone {
+
+    font-size: x-large;
+    margin-left: 50px;
+    background-color: #C5FFF8
+}
+
+.articoliPadre {
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 150px;
+
+}
+
+
+
+.articoli {
+
+    background: url(RGB.gif);
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 30px;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.elimina{
+
+    background: url(RGB.gif);
+    background-size: cover;
+    width: 600px;
+    height: 500px;
+    margin-top: 50px;
+    margin-left: 30px;
+    text-align: center;
+    overflow-y: scroll;
+    justify-items: center;
+    align-items: center;
+    margin-left: 150px;
+
+
+}
+
+.cestino{
+
+    margin-left: 400px;
+}
+
+@font-face {
+    font-display: block;
+    font-family: bootstrap-icons;
+    src: url("fonts/bootstrap-icons.woff2?7141511ac37f13e1a387fb9fc6646256") format("woff2"),url("fonts/bootstrap-icons.woff?7141511ac37f13e1a387fb9fc6646256") format("woff")
+}
+
+.bi::before,[class*=" bi-"]::before,[class^=bi-]::before {
+    display: inline-block;
+    font-family: bootstrap-icons!important;
+    font-size: xx-large;
+    font-weight: 600!important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.150em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.bi-trash3-fill::before {
+    content: "\f78a"
+}
+
+/* Stili per dimensioni dello schermo più piccole (esempio: smartphone) */
+@media only screen and (max-width: 768px) {
+    /* Modifica gli stili per adattarsi a schermi più piccoli */
+    .articoliPadre {
+        padding: 10px;
+    }
+
+    #articoli {
+        padding: 10px;
+    }
+
+    #articoloTitolo {
+        font-size: 20px;
+    }
+
+    #testo {
+        font-size: 16px;
+    }
+}
+
+/* Stili per dimensioni dello schermo più grandi (esempio: desktop) */
+@media only screen and (min-width: 769px) {
+    /* Modifica gli stili per adattarsi a schermi più grandi */
+    .articoliPadre {
+        padding: 20px;
+    }
+
+    #articoli {
+        padding: 15px;
+    }
+
+    #articoloTitolo {
+        font-size: 24px;
+    }
+
+    #testo {
+        font-size: 18px;
+    }
+}
